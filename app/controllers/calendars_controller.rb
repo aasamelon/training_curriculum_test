@@ -4,6 +4,9 @@ class CalendarsController < ApplicationController
   def index
     getWeek
     @plan = Plan.new
+    
+    wdays = ['日', '月', '火', '水', '木', '金', '土']
+    @today_wday = wdays[Date.today.wday]
   end
 
   # 予定の保存
